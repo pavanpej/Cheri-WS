@@ -1,0 +1,14 @@
+ReferenceError: Cannot access 'emailId' before initialization
+    at C:\Users\PAVAN\Desktop\Cheri\Cheri-WS\src\routes\userRouter.js:28:19
+    at Layer.handle [as handle_request] (C:\Users\PAVAN\Desktop\Cheri\Cheri-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\PAVAN\Desktop\Cheri\Cheri-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\PAVAN\Desktop\Cheri\Cheri-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\PAVAN\Desktop\Cheri\Cheri-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\PAVAN\Desktop\Cheri\Cheri-WS\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\PAVAN\Desktop\Cheri\Cheri-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\PAVAN\Desktop\Cheri\Cheri-WS\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (C:\Users\PAVAN\Desktop\Cheri\Cheri-WS\node_modules\express\lib\router\index.js:174:3)
+    at router (C:\Users\PAVAN\Desktop\Cheri\Cheri-WS\node_modules\express\lib\router\index.js:47:12)
+Error: Password Reset Failed
+    at C:\Users\PAVAN\Desktop\Cheri\Cheri-WS\src\service\userService.js:84:31
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
