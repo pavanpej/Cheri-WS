@@ -1,3 +1,4 @@
+const User = require('../model/User');
 const userdb = require('../model/userModel');
 const validator = require('../utilities/Validator');
 
@@ -72,5 +73,26 @@ UserService.addDetails = (UserObj) => {
         }
     })
 }
+
+UserService.resetPassword = (contactNo, emailId, password) => {
+    return userdb.findUserByContact(contactNo).then(object => {
+        if(object.emailId == emailId) {
+            return userdb.resetPassword(object.userId, password).then((data)=>{
+                if(data) {
+                    return object.userId;
+                } else {
+                    let err = new Error("Password Reset Failed");
+                    err.status = 503;
+                    throw err;
+                }
+            })
+        } else {
+            let err = new Error("Authentication Failed");
+                    err.status = 404;
+                    throw err;
+        }
+    })
+}
+
 
 module.exports = UserService;

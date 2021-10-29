@@ -68,12 +68,12 @@ userModel.addUser = (newUser) => {
     })
 }
 
-//To update user profile.
-userModel.updateProfile = (userId, name, password, contactNo) => {
+//To reset password.
+userModel.resetPassword = (userId, password) => {
     return collection.getUserCollection().then(model => {
-        return model.updateOne({ "userId": userId }, { $set: { "name": name, "password": password, "contactNo": contactNo } }).then((data) => {
+        return model.updateOne({ "userId": userId }, { $set: { "password": password } }).then((data) => {
             // console.log(data); 
-            if (data.nModified == 1) {
+            if (data.modifiedCount == 1) {
                 return userId;
             } else {
                 return null;

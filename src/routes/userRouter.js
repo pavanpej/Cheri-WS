@@ -22,13 +22,12 @@ router.post('/register', function (req, res, next) {
     }).catch(err => next(err));
 })
 
-//To edit user profile.
-router.put('/editProfile', function (req, res, next) {
-    let userId = req.body.userId;
-    let name = req.body.name;
-    let password = req.body.password;
+//To reset password.
+router.put('/resetPassword', function (req, res, next) {
     let contactNo = req.body.contactNo;
-    userService.updateProfile(userId, name, password, contactNo).then((result) => {
+    let emailId = req.body.emailId;
+    let password = req.body.password;
+    userService.resetPassword( contactNo, emailId, password).then((result) => {
         res.status(200);
         res.json(result);
     }).catch((err) => {
