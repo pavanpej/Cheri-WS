@@ -3,12 +3,14 @@ mongoose.Promise = global.Promise;
 
 const Schema = mongoose.Schema
 
-const mongo = {
-    url: 'mongodb+srv://cheri:Cheri1234@cheri.rigxw.mongodb.net/Cheri?retryWrites=true&w=majority',
-    opt: {
-        useNewUrlParser: true
-    }
-};
+// const mongo = {
+//     url: 'mongodb+srv://cheri:Cheri1234@cheri.rigxw.mongodb.net/Cheri?retryWrites=true&w=majority',
+//     opt: {
+//         useNewUrlParser: true
+//     }
+// };
+
+URI = 'mongodb+srv://cheri:Cheri1234@cheri.rigxw.mongodb.net/Cheri?retryWrites=true&w=majority';
 
 let connection = {};
 
@@ -24,7 +26,7 @@ const userSchema = Schema({
 }, { collection: "User" });
 
 connection.getUserCollection = () => {
-    return mongoose.connect(mongo.url, mongo.opt).then((database) => {
+    return mongoose.connect(URI, {useNewUrlParser: true}).then((database) => {
         console.log("Connected to Cheri database");
         return database.model('User', userSchema)
     }).catch((error) => {

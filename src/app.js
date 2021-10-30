@@ -23,7 +23,10 @@ app.use(function (req, res) {
 
 app.use(errorLogger)
 
-app.listen(process.env.PORT || 3000);  
-console.log("Server listening in port 3000"); 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, ()=>console.log(`Server started in port ${PORT}`));
+
+// app.listen(process.env.PORT || 3000);  
+// console.log("Server listening in port 3000"); 
 
 module.exports = app;
