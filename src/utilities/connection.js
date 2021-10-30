@@ -4,7 +4,7 @@ mongoose.Promise = global.Promise;
 const Schema = mongoose.Schema
 
 const mongo = {
-    url: 'mongodb://127.0.0.1:27017/Cheri',
+    url: 'mongodb+srv://cheri:Cheri1234@cheri.rigxw.mongodb.net/Cheri?retryWrites=true&w=majority',
     opt: {
         useNewUrlParser: true
     }
